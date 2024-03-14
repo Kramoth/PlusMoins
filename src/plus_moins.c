@@ -2,14 +2,21 @@
 #include<time.h>
 #include<stdlib.h>
 
-void plus_moins(int choix_joueur, int valeur_a_trouver){
+int plus_moins(int choix_joueur, int valeur_a_trouver){
 
 	if(choix_joueur<valeur_a_trouver)
+	{
 		printf("C'est plus !\n");
+		return 0;
+	}
 	else if (choix_joueur>valeur_a_trouver)
+	{
 		printf("C'est moins !\n");
+		return 0;
+	}
 	else
 		printf("bingo\n");
+		return 1;
 }
 
 int generate_guess(){
@@ -20,11 +27,13 @@ int generate_guess(){
 int main()
 {
 
-
+	int win=0;
 	int guess=generate_guess();
 	printf("%d\n",guess);
 	int choix_joueur;
 	printf("Devinez un nombre entre 0 et 100:\n");
-	scanf("%d",&choix_joueur);
-	plus_moins(choix_joueur, guess);
+	while(!win){
+		scanf("%d",&choix_joueur);
+		win=plus_moins(choix_joueur, guess);
+	}
 }
