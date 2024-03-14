@@ -28,7 +28,7 @@ int main()
 {
 
 	int win=0;
-	int guess=generate_guess();
+	//int guess=generate_guess();
 	printf("%d\n",guess);
 	int nombre_de_tour;
 	int difficulte;
