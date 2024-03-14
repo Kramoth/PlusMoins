@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
 
 void plus_moins(int choix_joueur, int valeur_a_trouver){
 
@@ -10,9 +12,17 @@ void plus_moins(int choix_joueur, int valeur_a_trouver){
 		printf("bingo\n");
 }
 
+int generate_guess(){
+	srand(time(NULL));
+	return rand()%101;
+}
+
 int main()
 {
-	int guess=42;
+
+
+	int guess=generate_guess();
+	printf("%d\n",guess);
 	int choix_joueur;
 	printf("Devinez un nombre entre 0 et 100:\n");
 	scanf("%d",&choix_joueur);
